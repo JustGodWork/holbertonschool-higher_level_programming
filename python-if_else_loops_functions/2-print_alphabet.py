@@ -1,5 +1,3 @@
 #!/usr/bin/python3
-i = ord("a")
-while i <= ord("z"):
-    print("{}".format(chr(i)), end='')
-    i = i + 1
+for letter in range(97, 123):
+    print("{0:c}".format(letter), end="")

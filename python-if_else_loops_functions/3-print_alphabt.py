@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-i = ord("a")
-while i <= ord("z"):
-    if i != ord("e") and i != ord("q"):
-        print("{}".format(chr(i)), end='')
-    i = i + 1
+for letter in range(97, 123):
+    if letter != 113 and letter != 101:
+        print("{0:c}".format(letter), end="")
