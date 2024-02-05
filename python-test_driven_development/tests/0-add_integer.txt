@@ -37,3 +37,20 @@ Import the `add_integer` function from the `0-add_integer` module and test it wi
     >>> add_integer(None)
     Traceback (most recent call last):
     TypeError: a must be an integer
+
+    >>> add_integer(2147483647, 1)  # Maximum positive integer
+    2147483648
+
+    >>> add_integer(-2147483648, 1)  # Minimum negative integer
+    -2147483647
+
+    >>> add_integer(0, 0)
+    0
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(3, float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
