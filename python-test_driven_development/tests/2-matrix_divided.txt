@@ -1,0 +1,128 @@
+Testing the `matrix_divided` function in Python
+===============================================
+
+This is a doctest file for testing the `matrix_divided` function in Python.
+It provides examples of how to use the function.
+
+Import file:
+------------
+
+.. code-block:: python
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Passing an empty matrix:
+------------------------
+
+.. code-block:: python
+
+    >>> matrix_divided([], 42)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[2, 4], [], [6, 8]], 42)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Passing a tuple as an argument:
+-------------------------------
+
+.. code-block:: python
+
+    >>> matrix_divided((2, 4, 6), 42)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[2, 4], (6, 8), [10, 12]], 42)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Passing `div` as a list:
+------------------------
+
+.. code-block:: python
+
+    >>> matrix_divided([[2, 4], [6, 8]], [42])
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+Passing `div` as a string:
+--------------------------
+
+.. code-block:: python
+
+    >>> matrix_divided([[2, 4], [6, 8]], "42")
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+Dividing the elements in a matrix whose rows do not have the same size:
+-----------------------------------------------------------------------
+
+    >>> matrix_divided([[2], [4, 6], [8, 10, 12]], 42)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+Dividing the elements in the matrix by 0:
+-----------------------------------------
+
+.. code-block:: python
+
+    >>> matrix_divided([[2, 4], [6, 8]], 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+Dividing the elements in a matrix where its elements are not integer/float numbers:
+-----------------------------------------------------------------------------------
+
+    >>> matrix_divided([["Holberton", "School"], ["Toulouse", "France"]], 42)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([["2.2", 4], ["6", 8.8], ["10.10", 12]], 42)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Dividing the elements in the matrix by 3 (given example)
+-------------------------------------------------------
+
+.. code-block:: python
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Dividing the elements in the matrix by a float number:
+-----------------------------------------------------
+
+.. code-block:: python
+
+    >>> matrix_divided([[2, 4], [6, 8]], 4.2)
+    [[0.48, 0.95], [1.43, 1.9]]
+
+    >>> matrix_divided([[2.2, 4.4, 6.6], [8.8, 10.10, 12.12]], 4.2)
+    [[0.52, 1.05, 1.57], [2.1, 2.4, 2.89]]
+
+Dividing the elements in the matrix that contains both positive and negative integer/float numbers:
+---------------------------------------------------------------------------------------------------
+
+.. code-block:: python
+
+    >>> matrix_divided([[-2, 4.4], [6, -8]], 4.2)
+    [[-0.48, 1.05], [1.43, -1.9]]
+
+Dividing the elements in the matrix with many numbers (long length):
+--------------------------------------------------------------------
+
+.. code-block:: python
+
+    >>> matrix_divided([[2, 4, 6, 8, 10], [12, 14, 16, 18, 20], [22, 24, 26, 28, 30]], 2)
+    [[1.0, 2.0, 3.0, 4.0, 5.0], [6.0, 7.0, 8.0, 9.0, 10.0], [11.0, 12.0, 13.0, 14.0, 15.0]]
