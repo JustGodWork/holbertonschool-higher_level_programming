@@ -1,0 +1,85 @@
+Testing the `Mylist` function in Python
+============================================
+
+This is a doctest file for testing the `Mylist` function in Python.
+It provides examples and of how to use the function.
+
+Import file:
+------------
+
+.. code-block:: python
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Empty list:
+-----------
+
+.. code-block:: python
+
+    >>> empty_list = MyList()
+    >>> empty_list.print_sorted()
+    []
+
+Basic list:
+-----------
+
+.. code-block:: python
+
+    >>> my_list = MyList([8, 6, 4, 2])
+    >>> print(my_list)
+    [8, 6, 4, 2]
+    >>> my_list.print_sorted()
+    [2, 4, 6, 8]
+    >>> my_list.append(10)
+    >>> print(my_list)
+    [8, 6, 4, 2, 10]
+    >>> my_list.print_sorted()
+    [2, 4, 6, 8, 10]
+
+
+List with duplicate elements:
+-----------------------------
+
+.. code-block:: python
+
+    >>> my_list = MyList([8, 6, 4, 2, 2, 4, 6, 8])
+    >>> print(my_list)
+    [8, 6, 4, 2, 2, 4, 6, 8]
+    >>> my_list.print_sorted()
+    [2, 2, 4, 4, 6, 6, 8, 8]
+
+List with negative and positive number:
+---------------------------------------
+
+.. code-block:: python
+
+    >>> my_list = MyList([-2, -4, -6, -8, 2, 4, 6, 8])
+    >>> print(my_list)
+    [-2, -4, -6, -8, 2, 4, 6, 8]
+    >>> my_list.print_sorted()
+    [-8, -6, -4, -2, 2, 4, 6, 8]
+
+List with strings:
+------------------
+
+.. code-block:: python
+
+    >>> str_list = MyList(["McDonalds", "SFR", "Apple", "Tesla"])
+    >>> print(str_list)
+    ['McDonalds', 'SFR', 'Apple', 'Tesla']
+    >>> str_list.print_sorted()
+    ['Apple', 'McDonalds', 'SFR', 'Tesla']
+
+List of mixed data types:
+-------------------------
+
+.. code-block:: python
+
+    >>> mixed_list = MyList([8, "Apple", 3.14, True])
+    >>> print(mixed_list)
+    [8, 'Apple', 3.14, True]
+    >>> mixed_list.print_sorted()
+    Traceback (most recent call last):
+    ...
+    TypeError: '<' not supported between instances of 'str' and 'int'
+    
