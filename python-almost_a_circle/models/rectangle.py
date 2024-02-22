@@ -19,10 +19,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Returns the width of the Rectangle instance."""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Sets the width of the Rectangle instance."""
         if type(value) is not int:
             raise TypeError("width must be an integer")
 
@@ -33,10 +35,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Returns the height of the Rectangle instance."""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Sets the height of the Rectangle instance."""
         if type(value) is not int:
             raise TypeError("height must be an integer")
 
@@ -47,10 +51,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Returns the x of the Rectangle instance."""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """Sets the x of the Rectangle instance."""
         if type(value) is not int:
             raise TypeError("x must be an integer")
 
@@ -61,10 +67,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """Returns the y of the Rectangle instance."""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """Sets the y of the Rectangle instance."""
         if type(value) is not int:
             raise TypeError("y must be an integer")
 
@@ -74,9 +82,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """Returns the area of the Rectangle instance."""
         return self.__width * self.__height
 
     def display(self):
+        """Prints the Rectangle instance with the `#` character."""
         print("\n" * self.y, end="")
         for i in range(self.__height):
             print(" " * self.x, end="")
@@ -85,10 +95,14 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        return ("[Rectangle] ({}) {}/{} - {}/{}"
-                .format(self.id, self.x, self.y, self.width, self.height))
+        """Returns a string representation of the Rectangle instance."""
+        return (
+            "[Rectangle] ({}) {}/{} - {}/{}"
+            .format(self.id, self.x, self.y, self.width, self.height)
+        )
 
     def update(self, *args, **kwargs):
+        """Updates the Rectangle instance."""
         if args:
             if len(args) >= 1:
                 self.id = args[0]
@@ -113,6 +127,7 @@ class Rectangle(Base):
                 self.y = kwargs["y"]
 
     def to_dictionary(self):
+        """Returns the dictionary representation of the Rectangle instance."""
         return {
             "id": self.id,
             "width": self.width,
