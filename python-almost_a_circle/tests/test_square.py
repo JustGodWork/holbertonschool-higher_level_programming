@@ -132,9 +132,13 @@ class TestBase(unittest.TestCase):
 
     def test_71(self):
         Square.save_to_file([])
+        with open("Square.json", "r") as file:
+            self.assertTrue(len(file.read()) > 0)
 
     def test_72(self):
         Square.save_to_file([Square(1)])
+        with open("Square.json", "r") as file:
+            self.assertTrue(len(file.read()) > 0)
 
     def test_73(self):
         with self.assertRaises(AttributeError) as context:
@@ -142,3 +146,12 @@ class TestBase(unittest.TestCase):
         self.assertTrue(
             "'TestBase' object has no attribute 'x'" in str(context.exception))
 
+    def test_74(self):
+        Square.save_to_file(None)
+        with open("Square.json", "r") as file:
+            self.assertTrue(len(file.read()) > 0)
+
+    def test_75(self):
+        square = Square(1)
+        square.to_dictionary()
+        self.assertTrue(type(square.to_dictionary()) == dict)
