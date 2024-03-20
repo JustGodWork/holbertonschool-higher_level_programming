@@ -1,1 +1,2 @@
+-- List tables
 SHOW TABLES;
