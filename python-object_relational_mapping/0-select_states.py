@@ -3,8 +3,10 @@
 Select all states from the database hbtn_0e_0_usa
 """
 
+
 from MySQLdb import Connection
 import sys
+
 
 if __name__ == "__main__":
     """
