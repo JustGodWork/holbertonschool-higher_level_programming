@@ -15,7 +15,7 @@ if __name__ == "__main__":
     and select state with a name matching a specific pattern
     using argv and the MySQLdb library
     """
-    db = MySQLdb.Connection(
+    db = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=sys.argv[1],

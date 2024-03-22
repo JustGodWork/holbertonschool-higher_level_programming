@@ -16,7 +16,7 @@ if __name__ == "__main__":
     matching a specific pattern in the database
     using argv and the MySQLdb library
     """
-    db = MySQLdb.Connection(
+    db = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=sys.argv[1],

@@ -14,7 +14,7 @@ if __name__ == "__main__":
     and list all states in the database
     using argv and the MySQLdb library
     """
-    db = MySQLdb.Connection(
+    db = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=sys.argv[1],
