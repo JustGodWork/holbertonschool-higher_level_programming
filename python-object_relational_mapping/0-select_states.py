@@ -3,7 +3,7 @@
 Select all states from the database hbtn_0e_0_usa
 """
 
-from MySQLdb import Connection
+from MySQLdb import connect
 import sys
 
 if __name__ == "__main__":
@@ -12,7 +12,7 @@ if __name__ == "__main__":
     and list all states in the database
     using argv and the MySQLdb library
     """
-    db = Connection(
+    db = connect(
         user=sys.argv[1],
         passwd=sys.argv[2],
         db=sys.argv[3]
