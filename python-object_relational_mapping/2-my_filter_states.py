@@ -4,7 +4,7 @@ Select all states with a name matching a specific pattern
 from the database hbtn_0e_0_usa
 """
 
-from MySQLdb import connect
+from MySQLdb import Connection
 import sys
 
 if __name__ == "__main__":
@@ -14,7 +14,9 @@ if __name__ == "__main__":
     matching a specific pattern in the database
     using argv and the MySQLdb library
     """
-    db = connect(
+    db = Connection(
+        host="localhost",
+        port=3306,
         user=sys.argv[1],
         passwd=sys.argv[2],
         db=sys.argv[3]

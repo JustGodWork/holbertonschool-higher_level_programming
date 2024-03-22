@@ -4,7 +4,7 @@ List all cities
 from the database hbtn_0e_0_usa
 """
 
-from MySQLdb import connect
+from MySQLdb import Connection
 import sys
 
 if __name__ == "__main__":
@@ -13,7 +13,9 @@ if __name__ == "__main__":
     and list all cities in the database
     using argv and the MySQLdb library
     """
-    db = connect(
+    db = Connection(
+        host="localhost",
+        port=3306,
         user=sys.argv[1],
         passwd=sys.argv[2],
         db=sys.argv[3]
