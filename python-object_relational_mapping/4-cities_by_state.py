@@ -5,7 +5,7 @@ from the database hbtn_0e_0_usa
 """
 
 
-from MySQLdb import Connection
+import MySQLdb
 import sys
 
 
@@ -15,7 +15,7 @@ if __name__ == "__main__":
     and list all cities in the database
     using argv and the MySQLdb library
     """
-    db = Connection(
+    db = MySQLdb.Connection(
         host="localhost",
         port=3306,
         user=sys.argv[1],
